@@ -1,0 +1,12 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "sass",
+  "main": "index.html",
+  "scripts": {
+    "sass" : "sass --watch ./sass/main.scss:./public/css/style.css",
+    "test": "hello world"
+  },
+  "author": "TFiessinger",
+  "license": "ISC"
+}

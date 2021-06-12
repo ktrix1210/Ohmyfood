@@ -1,0 +1,230 @@
+.header {
+    &--withBackArrow {
+      position: relative;
+    }
+  
+    &__arrow {
+      position: absolute;
+      left: 32px;
+      height: 32px;
+      width: 32px;
+      top: 50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 19px;
+      color: black;
+      transform: translateY(-50%);
+    }
+  }
+  
+  .heroImg {
+    max-width: 100%;
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .menu {
+    margin-top: -64px;
+    border-radius: 32px 32px 0 0;
+    background-color: rgb(250, 250, 250);
+    z-index: 1;
+    position: relative;
+  
+    &__header {
+      padding: 16px 32px 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    &__title {
+      font-family: "Shrikhand", "cursive";
+    }
+  
+    &__btn {
+      height: 32px;
+      width: 32px;
+      background-color: transparent;
+      border: transparent 0px solid;
+      padding: 0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor: pointer;
+      position: relative;
+      background-color: black;
+      
+      &:hover::before {
+        opacity: 1;
+      }
+      
+      &::before {
+        opacity: 0;
+        transition: 0.5s;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background:linear-gradient(0deg, $color-primary 0%,$color-secondary 100%);
+      }
+    }
+  
+    &__like {
+      transition-duration: .25s;
+      background-color: #f6f6f6;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      mix-blend-mode: lighten;
+      text-shadow: 0px 0px 2px grey;
+    }
+  
+    &__btn:hover {
+      .menu__like {
+        &--noBg {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .submenus {
+    display: grid;
+    @media (min-width: 1080px) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
+    }
+  }
+
+  .submenu {
+    max-width: 100%;
+    overflow: hidden;
+  
+    &__title {
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 8px;
+      font-weight: normal;
+  
+      &::after {
+        content: "";
+        width: 24px;
+        height: 5px;
+        background-color: $color-tertiary;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  .menuItem {
+    position: relative;
+    background-color: white;
+    padding: 16px;
+    display: flex;
+    /*grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;*/
+    max-width: 600px;
+    border-radius: 12px;
+    margin: 16px 0;
+    box-shadow: 5px 5px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    animation: itemAppear 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    opacity: 0;
+    bottom: -20px;
+    max-width: 100%;
+
+    @for $i from 0 to 9 {
+    &:nth-of-type(#{$i}) {
+        animation-delay:  #{$i/5}s;
+      }
+    }
+  
+    &__header {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      flex: 1;
+    }
+  
+    &__title {
+      margin: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  
+    &__description {
+      margin: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  
+    &__price {
+      font-weight: bold;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding-left: 8px;
+    }
+  
+    &__confirmation {
+      background-color: $color-tertiary;
+      margin: -15px -80px -15px 15px;
+      width: 64px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition-duration: 0.5s;
+    }
+  
+    &:hover &__confirmation {
+      margin-right: -15px;
+    }
+  
+    &__wrapIcon {
+      height: 25px;
+      width: 25px;
+      background-color: white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius: 100px;
+      transform: rotate(180deg);
+      transition-duration: 0.5s;
+    }
+  
+    &:hover &__wrapIcon {
+      transform: rotate(0);
+    }
+  
+    &__icon {
+      color: $color-tertiary;
+    }
+  }
+
+  .wrapBtn {
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    padding: 32px 0;
+  }
+  
+  .commandBtn {
+    @include button(primary);
+    cursor: pointer;
+  }
