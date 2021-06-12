@@ -1,7 +1,7 @@
 @keyframes itemAppear {
-    0% {
-      opacity: 0;
-      bottom: -20px;
+  0% {
+    opacity: 0;
+    bottom: -20px;
     }
     100% {
       opacity: 1;
@@ -14,7 +14,7 @@
       opacity: 0;
       z-index: -10;
     }
-  } 
+  }
   
   @keyframes jump {
     0% {
