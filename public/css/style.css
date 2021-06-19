@@ -133,7 +133,7 @@ body, html {
 }
 .menu__like {
   transition-duration: 0.25s;
-  background-color: #f6f6f6;
+  background-color: #fafafa;
   position: absolute;
   top: 0;
   left: 0;
@@ -166,6 +166,8 @@ body, html {
 .submenu__title {
   text-transform: uppercase;
   position: relative;
+  margin-left: 5px;
+  margin-right: 5px;
   padding-bottom: 8px;
   font-weight: normal;
 }
@@ -188,7 +190,7 @@ body, html {
   column-gap: 15px;*/
   max-width: 600px;
   border-radius: 12px;
-  margin: 16px 0;
+  margin: 16px 5px 5px 5px;
   box-shadow: 5px 5px 16px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   cursor: pointer;
@@ -526,7 +528,7 @@ body, html {
 }
 .card__btn {
   height: 2rem;
-  width: 2rem;
+  width: 43px;
   border: transparent 0px solid;
   padding: 0;
   display: flex;

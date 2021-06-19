@@ -75,7 +75,7 @@
   
     &__like {
       transition-duration: .25s;
-      background-color: #f6f6f6;
+      background-color: #fafafa;
       position: absolute;
       top: 0;
       left: 0;
@@ -112,6 +112,8 @@
     &__title {
       text-transform: uppercase;
       position: relative;
+      margin-left: 5px;
+      margin-right: 5px;
       padding-bottom: 8px;
       font-weight: normal;
   
@@ -136,7 +138,7 @@
     column-gap: 15px;*/
     max-width: 600px;
     border-radius: 12px;
-    margin: 16px 0;
+    margin: 16px 5px 5px 5px;
     box-shadow: 5px 5px 16px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     cursor: pointer;
